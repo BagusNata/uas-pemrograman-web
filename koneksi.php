@@ -1,10 +1,17 @@
 <?php
   class database{
-    
-    private $host = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $database = "bo203_db";
+    //Development connection
+    // private $host     = "localhost";
+    // private $username = "root";
+    // private $password = "";
+    // private $database = "bo203_db";
+
+    //Remote database connection
+    private $host     = "remotemysql.com";
+    private $username = "wypFBCiNam";
+    private $password = "K44JgC4cX5";
+    private $database = "wypFBCiNam";
+
     
     protected $conn;
 
