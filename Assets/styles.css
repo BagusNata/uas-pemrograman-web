@@ -1,0 +1,219 @@
+/* GENERAL */
+html {
+  scroll-behavior: smooth;
+}
+.bg-login {
+  background: url("./Image/login-bg.png") no-repeat center center fixed;
+  background-size: cover;
+}
+.bg-blackTheme {
+  background: url("./Image/bg-black.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* LOGIN PAGE */
+.input-display {
+  width: 30rem;
+  height: 2.5rem;
+  border-radius: 10px;
+}
+.shadow-login {
+  box-shadow: -10px 0px 13px -7px #ffffff, 10px 0px 13px -7px #ffffff,
+    5px 17px 41px 27px rgba(55, 53, 53, 0.661);
+}
+.form-login-display {
+  display: flex;
+  justify-content: center;
+}
+.form-login-content {
+  color: white;
+  display: grid;
+  justify-content: center;
+}
+.login-tittle {
+  font-size: xx-large;
+  margin-bottom: 2rem;
+}
+.label-font {
+  font-size: large;
+}
+.login-form-body {
+  display: inline-flex;
+  /* background-color: #faf0d7; */
+  background-color: #000000;
+  font-family: math;
+  padding: 2rem 3rem;
+  border-radius: 30px;
+}
+/* Login Button */
+.btn-form-login {
+  margin-top: 10px;
+  border-color: rgb(85, 81, 81);
+  border-bottom-width: medium;
+  border-radius: 10px;
+}
+.btn-login {
+  width: 9rem;
+  height: 2.5rem;
+  font-size: medium;
+}
+/* Signup Button */
+.btn-form-signup {
+  margin-top: 10px;
+  border-color: rgb(85, 81, 81);
+  border-radius: 10px;
+}
+.btn-signup {
+  border-color: #0d6efd;
+  width: 9rem;
+  height: 2.5rem;
+  font-size: medium;
+}
+
+/* NAVBAR */
+.mynavbar {
+  justify-content: center;
+  font-size: large;
+}
+
+/* CONTENT */
+.titleBox {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  color: #fafafa;
+  font-size: xxx-large;
+  font-weight: 600;
+  -webkit-text-stroke: 1.5px;
+  font-family: sans-serif;
+  text-shadow: 1px 4px 5px #000000;
+  -webkit-text-stroke-color: black;
+}
+.title2 {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  margin-left: 0.8rem;
+  color: #fbc158;
+  font-size: xxx-large;
+  font-weight: 600;
+  -webkit-text-stroke: 1.5px;
+  font-family: sans-serif;
+  text-shadow: 1px 4px 5px #000000;
+  -webkit-text-stroke-color: black;
+}
+
+/* SEARCH BOX */
+.input-shape {
+  height: 2.5rem;
+  padding: 0 10px;
+  border-radius: 10px 0 0 10px;
+  background: #fafafa;
+  color: black;
+  font-size: medium;
+  border: 1px solid black;
+}
+.search-box-body {
+  color: white;
+  display: flex;
+  justify-content: end !important;
+  margin-bottom: 0.5rem;
+}
+
+.button-search {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: lightgray;
+  font-size: medium;
+  border: 1px solid black;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+  cursor: pointer;
+}
+.button-search:hover {
+  background: #fbc158;
+}
+form.search-box::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.loginBody {
+  color: #fafafa;
+}
+
+/* INDEX TABLE */
+.shadow {
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 17px 41px 27px rgb(0 0 0 / 46%);
+}
+/* head */
+.table_title {
+  text-align: center;
+  font-size: medium;
+  font-family: ui-serif;
+}
+
+/* body */
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: middle !important;
+  border-top: 1px solid #dee2e6;
+}
+.table-body {
+  text-align: left;
+  font-size: medium;
+  font-family: math;
+  background-color: #fafafa;
+}
+
+/* INSERT DATA */
+.form-display {
+  display: flex;
+  margin-bottom: 4rem;
+  justify-content: center;
+}
+.insert-form-body {
+  display: inline-flex;
+  background-color: #fafafa;
+  font-family: math;
+  padding: 2rem 3rem;
+  border-radius: 30px;
+}
+.form-input {
+  width: 20rem;
+  border-radius: 6px;
+  margin: 5px 0;
+}
+.td-space {
+  padding: 0 1rem;
+  margin: 5px 0;
+}
+
+/* SELECT MAHASISWA */
+.table-bodyMhs {
+  text-align: center;
+  font-size: medium;
+  font-family: math;
+  background-color: #fafafa;
+}
+
+/* SELECT JURUSAN */
+.table-bodyJurusan {
+  text-align: center;
+  font-size: medium;
+  font-family: math;
+  background-color: #fafafa;
+}
+
+/* UPDATE */
+.btn-form {
+  margin-top: 10px;
+  border-color: black;
+  border-bottom-width: medium;
+  border-radius: 10px;
+}
