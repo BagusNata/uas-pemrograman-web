@@ -78,7 +78,7 @@
                   ?>  
                 </td>
                 <td class="text-center"> 
-                  <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $tampil['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
+                  <a style="color:black;" href="proses_mahasiswa.php?q=delete&nim=<?php echo $tampil['nim'] ?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
                 </td>
               </tr>
               <?php } ?>
