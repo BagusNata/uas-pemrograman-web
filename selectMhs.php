@@ -98,28 +98,56 @@
         </table>
       </div>
     </div>  
-    
 
-    <!-- Untuk merefresh -->
+    <!-- Untuk alret -->
     <?php if (isset ($_GET['m'])) : ?>
-      <div class="update-data" data-update_data="<?= $_GET['m']; ?>"></div>
-    <?php endif; ?>
+      <?php if ($_GET['m'] == "new"){ ?>
+        <div class="new-data" data-new="<?= $_GET['m'] == "new"; ?>"></div>
+      <?php } else if ($_GET['m'] == "update"){ ?>
+        <div class="update-data" data-update="<?= $_GET['m'] == "update"; ?>"></div>
+      <?php } else if ($_GET['m'] == "delete") { ?>
+        <div class="delete-data" data-delete="<?= $_GET['m'] == "delete"; ?>"></div>
+      <?php } ?>
+   <?php endif; ?>
 
     <!-- Optional JavaScript -->
     <!-- SweetAlert2 --> 
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
-      const update = $('.update-data').data('update_data')
+      const new = $('.new-data').data('new')
+      if (new) {
+          Swal.fire({
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'success',
+            title : 'Thank you',
+            text  : 'New record has been successfully added!',
+          })
+      }
+
+      const update = $('.update-data').data('update')
       if (update) {
           Swal.fire({
-              icon  : 'success',
-              title : 'Success',
-              text  : 'Record has been updated!',
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'success',
+            title : 'Record updated',
+            text  : 'Record has been successfully updated!',
+          })
+      }
+
+      const delete = $('.delete-data').data('delete')
+      if (delete) {
+          Swal.fire({
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'success',
+            title : 'Record deleted',
+            text  : 'Record has been successfully deleted!',
           })
       }
     </script>
-    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
