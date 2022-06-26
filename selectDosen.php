@@ -78,52 +78,24 @@
     </div>
   </div>
 
-    <!-- Untuk alert -->
+  <!-- Untuk alert -->
     <?php if (isset ($_GET['m'])) : ?>
-      <?php if ($_GET['m'] == "new"){ ?>
-        <div class="new-data" data-new="<?= $_GET['m'] == "new"; ?>"></div>
-      <?php } else if ($_GET['m'] == "update"){ ?>
-        <div class="update-data" data-update="<?= $_GET['m'] == "update"; ?>"></div>
-      <?php } else if ($_GET['m'] == "delete") { ?>
-        <div class="delete-data" data-delete="<?= $_GET['m'] == "delete"; ?>"></div>
-      <?php } ?>
-   <?php endif; ?>
+      <div class="update-data" data-update_data="<?= $_GET['m']; ?>"></div>
+    <?php endif; ?>
 
     <!-- Optional JavaScript -->
     <!-- SweetAlert2 --> 
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
-      const new = $('.new-data').data('new')
-      if (new) {
-          Swal.fire({
-            timer: 3500,
-            timerProgressBar: true,
-            icon  : 'success',
-            title : 'Thank you',
-            text  : 'New record has been successfully added!',
-          })
-      }
-
-      const update = $('.update-data').data('update')
+      const update = $('.update-data').data('update_data')
       if (update) {
           Swal.fire({
             timer: 3500,
             timerProgressBar: true,
             icon  : 'success',
-            title : 'Record updated',
-            text  : 'Record has been successfully updated!',
-          })
-      }
-
-      const delete = $('.delete-data').data('delete')
-      if (delete) {
-          Swal.fire({
-            timer: 3500,
-            timerProgressBar: true,
-            icon  : 'success',
-            title : 'Record deleted',
-            text  : 'Record has been successfully deleted!',
+            title : 'Success',
+            text  : 'Record has been updated!',
           })
       }
     </script>

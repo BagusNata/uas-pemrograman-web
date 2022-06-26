@@ -108,7 +108,7 @@
             timerProgressBar: true,
             icon  : 'success',
             title : 'Thank you!',
-            text  : 'you have successfully registered!',
+            text  : 'You have successfully registered!',
           })
       }
     </script>
