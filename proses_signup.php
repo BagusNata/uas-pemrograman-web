@@ -4,6 +4,7 @@
 
   if (isset($_POST['submitInsert'])){
       $data = array(
+        'user_id' 	=> $_POST[''],
         'fullname' 	=> $_POST['fullname'],
         'username' 	=> $_POST['username'],
         'email' 		=> $_POST['email'],
