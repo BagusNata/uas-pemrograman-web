@@ -12,7 +12,7 @@
       
       $exec = $csignup->new_user($data);
       if($exec){
-        header('location: login.php');
+        header('location: login.php?m=signupSuccess');
       }else{
         echo "<script>alert('Data Gagal Disimpan!'); history.go(-1);</script>";
       }

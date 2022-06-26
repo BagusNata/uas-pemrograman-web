@@ -57,6 +57,8 @@
         <div class="fail-login" data-fail_login="<?= $_GET['m'] == "fail"; ?>"></div>
     <?php } else if ($_GET['m'] == "timeout"){ ?>
         <div class="session-timeout" data-session_timeout="<?= $_GET['m'] == "timeout"; ?>"></div>
+    <?php } else if ($_GET['m'] == "signupSuccess"){ ?>
+        <div class="signup-success" data-signup_success="<?= $_GET['m'] == "signupSuccess"; ?>"></div>
     <?php } ?>
    <?php endif; ?>
 
@@ -96,6 +98,17 @@
             icon  : 'warning',
             title : 'Session Timeout',
             text  : 'Please re-login to enter the home page!',
+          })
+      }
+
+      const signup = $('.signup-success').data('signup_success')
+      if (signup) {
+          Swal.fire({
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'success',
+            title : 'Thank you!',
+            text  : 'you have successfully registered!',
           })
       }
     </script>
