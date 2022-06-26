@@ -12,7 +12,7 @@ if ($_GET['q'] == "insert"){
 		
 		$exec = $cjurusan->insert_data($data);
 		if($exec){
-			header('location: selectJurusan.php?m=1');
+			header('location: selectJurusan.php?m=new');
 		}else{
 			echo "<script>alert('Data Gagal Disimpan!'); history.go(-1);</script>";
 		}
@@ -27,7 +27,7 @@ if ($_GET['q'] == "insert"){
 		
 		$exec = $cjurusan->update_data($data);;
 		if($exec){
-			header('location: selectJurusan.php?m=1');
+			header('location: selectJurusan.php?m=update');
 		}else{
 			echo "<script>alert('Data Gagal Diupdate!'); history.go(-1);</script>";
 		}
@@ -38,7 +38,7 @@ if ($_GET['q'] == "insert"){
 	$cjurusan->delete_data($kode_jurusan);
 	$exec = $cjurusan->delete_data($kode_jurusan);
 		if($exec){
-			header('location: selectJurusan.php?m=1');
+			header('location: selectJurusan.php?m=delete');
 		}else{
 			echo "<script>alert('Data Gagal Dihapus!'); history.go(-1);</script>";
 		}

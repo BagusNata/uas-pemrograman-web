@@ -99,7 +99,7 @@
       </div>
     </div>  
 
-    <!-- Untuk alret -->
+    <!-- Untuk alert -->
     <?php if (isset ($_GET['m'])) : ?>
       <?php if ($_GET['m'] == "new"){ ?>
         <div class="new-data" data-new="<?= $_GET['m'] == "new"; ?>"></div>

@@ -18,7 +18,7 @@ if ($_GET['q'] == "insert"){
 		
 		$exec = $cdosen->insert_data($data);
 		if($exec){
-			header('location: selectDosen.php?m=1');
+			header('location: selectDosen.php?m=new');
 		}else{
 			echo "<script>alert('Data Gagal Disimpan!'); history.go(-1);</script>";
 		}
@@ -39,7 +39,7 @@ if ($_GET['q'] == "insert"){
 		
 		$exec = $cdosen->update_data($data);;
 		if($exec){
-			header('location: selectDosen.php?m=1');
+			header('location: selectDosen.php?m=update');
 		}else{
 			echo "<script>alert('Data Gagal Diupdate!'); history.go(-1);</script>";
 		}
@@ -50,7 +50,7 @@ if ($_GET['q'] == "insert"){
 	$cdosen->delete_data($nidn);
 	$exec = $cdosen->delete_data($nidn);
 		if($exec){
-			header('location: selectDosen.php?m=1');
+			header('location: selectDosen.php?m=delete');
 		}else{
 			echo "<script>alert('Data Gagal Dihapus!'); history.go(-1);</script>";
 		}
