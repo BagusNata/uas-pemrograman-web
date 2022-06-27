@@ -4,7 +4,7 @@ include "koneksi.php";
 class signup extends database{
 	function new_user($data){
 		$qry = "INSERT INTO user 
-						VALUES ('". "' ,
+						VALUES ('".$data['user_id']. "' ,
 							'".$data['fullname']."' , '".$data['username']."' ,
 							'".$data['email']."' 	  , '".$data['password']."' 	
 						)" or die(mysqli_error($this->conn));
