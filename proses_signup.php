@@ -2,7 +2,7 @@
   include "proses_class_system.php";
   $csignup = new signup();
 
-  if (isset($_POST['submitInsert'])){
+  if (isset($_POST['submitSignup'])){
       $data = array(
         'user_id' 	=> $_POST[''],
         'fullname' 	=> $_POST['fullname'],

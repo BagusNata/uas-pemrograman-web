@@ -39,7 +39,7 @@
               </div>
               <button  
                 type="submit" 
-                name="submitInsert"
+                name="submitSignup"
                 class="btn btn-success btn-form-login btn-login"> 
                     Sign up 
               </button>
