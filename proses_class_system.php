@@ -24,6 +24,17 @@ class login extends database{
 	}
 };
 
+class loginAdmin extends database{
+	function login_admin($data){
+		$qry = "SELECT * FROM admin 
+        		WHERE (username = '".$data['username']."' OR email = '".$data['username']."') 
+						AND password = '".$data['password']."' "  or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		$data = mysqli_fetch_array($exec);
+		return $data;
+	}
+};
+
 class mahasiswa extends database{
 
 	function __construct(){
@@ -410,4 +421,214 @@ class dosen extends database{
 	}
 };
 
+class mhsJadwal extends database{
+
+	function __construct(){
+		parent::__construct();
+
+		//memulai session
+    session_start();
+    //belum login
+    if(empty($_SESSION['username'])){
+      $_SESSION['username'] = $data['username'];
+      header('location: login.php?m=timeout');
+    }
+	}
+
+	function select_data($nim){
+		$qry = "SELECT mj.*, jk.*, mk.*, h.nama_hari
+						FROM mhs_jadwal AS mj
+						INNER JOIN jadwal_kuliah AS jk
+						ON mj.kode_jadwal = jk.kode_jadwal
+						INNER JOIN matakuliah AS mk
+						ON mk.kode_matakuliah = jk.kode_matakuliah	
+						INNER JOIN hari AS h
+						ON jk.hari = h.kode_hari
+						WHERE mj.nim = '$nim'
+						ORDER BY jk.hari"
+						or die(mysqli_error($this->conn));	;
+
+		$exec = mysqli_query($this->conn, $qry);
+		$qryResult = mysqli_num_rows($exec);
+					
+		if ($qryResult > 0){
+			while($tampil = mysqli_fetch_assoc($exec)){
+				$data[] = $tampil;
+			}
+			return $data;
+		} else {
+			echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
+		}
+	}
+
+	function auto_insert_nim($nim){
+		$qry = "SELECT * FROM mahasiswa
+						WHERE nim = '$nim'" 
+						or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		$data= mysqli_fetch_assoc($exec);
+		return $data;
+	}
+
+	function insert_data($data){
+		$qry = "INSERT INTO mhs_jadwal 
+						VALUES ('". "' , '".$data['nim']."' , '".$data['kode_jadwal']."')" 
+						or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		return $exec;
+	}
+
+	function print_option_pertama(){
+		$qry = "SELECT jk.*, mk.*, h.nama_hari
+						FROM jadwal_kuliah AS jk
+						INNER JOIN matakuliah AS mk
+						ON mk.kode_matakuliah = jk.kode_matakuliah	
+						INNER JOIN hari AS h
+						ON jk.hari = h.kode_hari
+						WHERE jk.kode_matakuliah = 1
+						ORDER BY jk.kode_matakuliah";
+    $exec = mysqli_query($this->conn, $qry);
+					
+		while($tampil = mysqli_fetch_assoc($exec)){
+			$data[] = $tampil;
+		}
+		return $data;
+	}
+
+	function print_option_kedua(){
+		$qry = "SELECT jk.*, mk.*, h.nama_hari
+						FROM jadwal_kuliah AS jk
+						INNER JOIN matakuliah AS mk
+						ON mk.kode_matakuliah = jk.kode_matakuliah	
+						INNER JOIN hari AS h
+						ON jk.hari = h.kode_hari
+						WHERE jk.kode_matakuliah = 2
+						ORDER BY jk.kode_matakuliah";
+    $exec = mysqli_query($this->conn, $qry);
+					
+		while($tampil = mysqli_fetch_assoc($exec)){
+			$data[] = $tampil;
+		}
+		return $data;
+	}
+
+	function print_option_ketiga(){
+		$qry = "SELECT jk.*, mk.*, h.nama_hari
+						FROM jadwal_kuliah AS jk
+						INNER JOIN matakuliah AS mk
+						ON mk.kode_matakuliah = jk.kode_matakuliah	
+						INNER JOIN hari AS h
+						ON jk.hari = h.kode_hari
+						WHERE jk.kode_matakuliah = 3
+						ORDER BY jk.kode_matakuliah";
+    $exec = mysqli_query($this->conn, $qry);
+					
+		while($tampil = mysqli_fetch_assoc($exec)){
+			$data[] = $tampil;
+		}
+		return $data;
+	}
+};
+
+class adminJadwal extends database{
+
+	function __construct(){
+		parent::__construct();
+
+		//memulai session
+    session_start();
+    //belum login
+    if(empty($_SESSION['username'])){
+      $_SESSION['username'] = $data['username'];
+      header('location: login.php?m=timeout');
+    }
+	}
+
+	function select_data(){
+		$qry = "SELECT DISTINCT jk.*, mk.*, h.nama_hari
+						FROM jadwal_kuliah AS jk
+						INNER JOIN matakuliah AS mk
+						ON mk.kode_matakuliah = jk.kode_matakuliah	
+						INNER JOIN hari AS h
+						ON jk.hari = h.kode_hari
+						ORDER BY jk.kode_matakuliah"
+						or die(mysqli_error($this->conn));
+
+		$exec = mysqli_query($this->conn, $qry);
+		$qryResult = mysqli_num_rows($exec);
+					
+		if ($qryResult > 0){
+			while($tampil = mysqli_fetch_assoc($exec)){
+				$data[] = $tampil;
+			}
+			return $data;
+		} else {
+			echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
+		}
+	}
+
+	function insert_data($data){
+		$qry = "INSERT INTO jadwal_kuliah 
+						VALUES ( 
+							'".$data['kode_jadwal']."' , '".$data['kode_matakuliah']."' ,
+							'".$data['hari']."' 	 		 , '".$data['jam']."' 						,
+							'".$data['kelas']."' 			 , '".$data['ruang']."' 			
+						)" or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		return $exec;
+	}
+
+	function print_option_hari(){
+		$qry = "SELECT * FROM hari";
+    $exec = mysqli_query($this->conn, $qry);
+					
+		while($tampil = mysqli_fetch_assoc($exec)){
+			$data[] = $tampil;
+		}
+		return $data;
+	}
+
+	function print_option_matakuliah(){
+		$qry = "SELECT * FROM matakuliah";
+    $exec = mysqli_query($this->conn, $qry);
+					
+		while($tampil = mysqli_fetch_assoc($exec)){
+			$data[] = $tampil;
+		}
+		return $data;
+	}
+
+	function edit($kode_jadwal){
+		$qry = "SELECT DISTINCT jk.*, mk.*, h.*
+						FROM jadwal_kuliah AS jk
+						INNER JOIN matakuliah AS mk
+						ON mk.kode_matakuliah = jk.kode_matakuliah	
+						INNER JOIN hari AS h
+						ON jk.hari = h.kode_hari
+						WHERE kode_jadwal = '$kode_jadwal'
+						ORDER BY jk.kode_matakuliah"
+						or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		$data= mysqli_fetch_assoc($exec);
+		return $data;
+	}
+
+	function update_data($data){
+		$qry = "UPDATE jadwal_kuliah
+          	SET hari  			= '".$data['hari']."'  	, jam 	 = '".$data['jam']."' 	,
+								ruang = '".$data['ruang']."' 
+          	WHERE kode_jadwal = '".$data['kode_jadwal']."' "
+						or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		return $exec;
+	}
+
+	function delete_data($kode_jadwal){
+		$qry = "DELETE FROM jadwal_kuliah 
+						WHERE kode_jadwal = '$kode_jadwal'" 
+						or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		return $exec;
+	}
+};
 ?>
