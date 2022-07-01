@@ -50,6 +50,15 @@
             <li><a class="dropdown-item" href="deleteDosen.php">Data dosen</a></li>
           </ul>
         </li>
+        <!-- Jadwal Kuliah -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Jadwal Kuliah
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="selectMhsJadwal.php">Mahasiswa</a></li>
+            <li><a class="dropdown-item" href="login_admin.php">Admin</a></li></ul>
+        </li>
         <!-- Logout -->
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
