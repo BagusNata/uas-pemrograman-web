@@ -217,3 +217,19 @@ form.search-box::after {
   border-bottom-width: medium;
   border-radius: 10px;
 }
+
+/* JADWAL FORM  */
+.d-jadwal_form {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pad-jadwal_form {
+  margin: 0 1.5rem;
+}
+
+/* ADMIN PAGE */
+.button_tambah{
+  margin-top: 15rem;
+  margin-right: 5rem;
+  position: fixed;
+}
