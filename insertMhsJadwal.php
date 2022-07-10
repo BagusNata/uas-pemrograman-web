@@ -230,7 +230,9 @@
             icon  : 'success',
             title : 'Success',
             text  : 'Class Schedule successfully selected!',
-          })
+          }).then(function() {
+              history.go(-1);
+          });
       }
     </script>
 
