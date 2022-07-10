@@ -39,7 +39,7 @@
                 <button 
                   type="button"
                   onclick="history.go(-1);" 
-                  class="btn btn-danger btn-form" 
+                  class="btn btn-danger btn-form-lgn-cancel  btn-lgn-cancel" 
                   id="btn-cancel">Cancel
                 </button>
               </div>

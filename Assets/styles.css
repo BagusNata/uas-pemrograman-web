@@ -57,6 +57,20 @@ html {
   height: 2.5rem;
   font-size: medium;
 }
+
+/* Login cancel button  */
+.btn-form-lgn-cancel {
+  margin-top: 10px;
+  border-color: rgb(85, 81, 81);
+  border-bottom-width: medium;
+  border-radius: 10px;
+}
+.btn-lgn-cancel {
+  width: 5rem;
+  height: 2.5rem;
+  font-size: medium;
+}
+
 /* Signup Button */
 .btn-form-signup {
   margin-top: 10px;
