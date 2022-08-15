@@ -29,7 +29,7 @@
   <body class="bg-blackTheme">
     <!-- NAVBAR -->
     <?php
-      include "navbar.php";
+      include "navbar_mhs.php";
     ?>
 
     <!-- Content --> 

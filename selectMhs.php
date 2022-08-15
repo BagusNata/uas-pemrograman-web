@@ -29,7 +29,7 @@
   <body class="bg-blackTheme">
     <!-- NAVBAR -->
     <?php
-      include "navbar.php";
+      include "navbar_mhs.php";
     ?> 
     <!-- Content --> 
       <div class="container">    
@@ -100,23 +100,23 @@
     </div>  
 
     <!-- Untuk alert -->
-    <?php if (isset ($_GET['m'])) : ?>
-      <div class="update-data" data-update_data="<?= $_GET['m']; ?>"></div>
-    <?php endif; ?>
+     <?php if ($_GET['m'] == "success") {?>
+        <div class="login-user" data-login="<?= $_GET['m'] == "success"; ?>"></div>
+    <?php } ?>
 
     <!-- Optional JavaScript -->
     <!-- SweetAlert2 --> 
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
-      const update = $('.update-data').data('update_data')
-      if (update) {
+      const login = $('.login-user').data('login')
+      if (login) {
           Swal.fire({
             timer: 3500,
             timerProgressBar: true,
             icon  : 'success',
-            title : 'Success',
-            text  : 'Record has been updated!',
+            title : 'Login Success',
+            text  : 'Welcome to home page!',
           })
       }
     </script>
