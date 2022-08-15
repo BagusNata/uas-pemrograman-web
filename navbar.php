@@ -17,17 +17,6 @@
             <li><a class="dropdown-item" href="insertDosen.php">Data Dosen</a></li>
           </ul>
         </li>
-        <!-- Select -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Select
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="selectMhs.php">Data Mahasiswa</a></li>
-            <li><a class="dropdown-item" href="selectJurusan.php">Data Jurusan</a></li>
-            <li><a class="dropdown-item" href="selectDosen.php">Data Dosen</a></li>
-          </ul>
-        </li>
         <!-- Update -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,13 +40,8 @@
           </ul>
         </li>
         <!-- Jadwal Kuliah -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Jadwal Kuliah
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="selectMhsJadwal.php">Mahasiswa</a></li>
-            <li><a class="dropdown-item" href="login_admin.php">Admin</a></li></ul>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="selectAdminJadwal.php">Jadwal Kuliah</a>
         </li>
         <!-- Logout -->
         <li class="nav-item">
