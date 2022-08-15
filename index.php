@@ -108,7 +108,7 @@
       </div>
     </div>
 
-    <!-- Untuk merefresh -->
+    <!-- Untuk alert -->
      <?php if ($_GET['m'] == "success") {?>
         <div class="login-user" data-login="<?= $_GET['m'] == "success"; ?>"></div>
     <?php } ?>
