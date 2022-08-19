@@ -1,6 +1,17 @@
 <?php
   include "proses_class_system.php";
   $cjurusan = new jurusan();
+
+  function search() {
+		?>
+		<form class="search-box-body" action="admin_searchJurusan.php" method="POST">
+			<input class="input-shape" type="text" placeholder="Search..." name="search">
+			<button class="button-search" type="submit" name="submit-search"> 
+				<i class="fa fa-search"></i>
+			</button>
+		</form>
+		<?php
+  }
 ?>
 
 <!doctype html>
@@ -25,7 +36,11 @@
       <div class="titleBox">
         <h1 class="title">Data</h1>
         <h1 class="title2">Jurusan</h1>
-      </div>  
+      </div>
+      <!-- SearchBox -->
+      <?php
+        search()
+      ?>  
         <!-- Table -->
         <div class="table-responsive-sm shadow">
           <table class="table table-bordered" border="3">
@@ -33,6 +48,7 @@
               <tr>
                 <th scope="col">Kode Jurusan</th>
                 <th scope="col">Nama Jurusan</th>
+                <th scope="col" colspan="2">Action</th>
               </tr>
             </thead>
           <!-- show Data Table -->
@@ -43,6 +59,12 @@
               <tr>
                 <td class="text-center"> <?php echo $tampil['kode_jurusan']  ?> </td>
                 <td class="text-center"> <?php echo $tampil['nama_jurusan']  ?> </td>
+                <td class="text-center"> 
+                  <a style="color:black;" href="editJurusan.php?kode_jurusan=<?php echo $tampil['kode_jurusan']?>" class="btn-edit"> <img src="Assets/Image/b_update.png" width="30px"> Edit </a>
+                </td>
+                <td class="text-center"> 
+                  <a style="color:black;" href="proses_jurusan.php?q=delete&kode_jurusan=<?php echo $tampil['kode_jurusan'] ?>" class="btn-del"> <img src="Assets/Image/b_delete.png" width="30px"> Delete </a>
+                </td>
               </tr>
               <?php } ?>
             </tbody>

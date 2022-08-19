@@ -49,6 +49,7 @@
           <tr>
             <th scope="col">Kode Jurusan</th>
             <th scope="col">Nama Jurusan</th>
+            <th scope="col" colspan="2">Action</th>
           </tr>
         </thead>
         <!-- show Data Table -->
@@ -59,6 +60,12 @@
               <tr>
                 <td class="text-center"> <?php echo $tampil['kode_jurusan']  ?> </td>
                 <td class="text-center"> <?php echo $tampil['nama_jurusan']  ?> </td>
+                <td class="text-center"> 
+                  <a style="color:black;" href="editJurusan.php?kode_jurusan=<?php echo $tampil['kode_jurusan']?>" class="btn-edit"> <img src="Assets/Image/b_update.png" width="30px"> Edit </a>
+                </td>
+                <td class="text-center"> 
+                  <a style="color:black;" href="proses_jurusan.php?q=delete&kode_jurusan=<?php echo $tampil['kode_jurusan'] ?>" class="btn-del"> <img src="Assets/Image/b_delete.png" width="30px"> Delete </a>
+                </td>
               </tr>
               <?php } ?>
             </tbody>
@@ -76,6 +83,42 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
+      $('.btn-edit').on('click', function(e) {
+          e.preventDefault();
+          const href = $(this).attr('href')
+          Swal.fire({
+              title : "Are You Sure?",
+              text  : 'You will redirected to edit page!',
+              icon  : 'warning',
+              showCancelButton  : true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor : '#d33',
+              confirmButtonText : 'Yes',
+          }). then ((result) => {
+                  if (result.value) {
+                      document.location.href = href;
+                  }
+          })
+      })
+
+      $('.btn-del').on('click', function(e) {
+          e.preventDefault();
+          const href = $(this).attr('href')
+          Swal.fire({
+              title : "Are You Sure?",
+              text  : 'Record will be deleted?',
+              icon  : 'warning',
+              showCancelButton  : true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor : '#d33',
+              confirmButtonText : 'Delete Record',
+          }).then ((result) => {
+                  if (result.value) {
+                      document.location.href = href;
+                  }
+          })
+      })
+      
       const update = $('.update-data').data('update_data')
       if (update) {
           Swal.fire({
