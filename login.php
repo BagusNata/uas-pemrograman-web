@@ -49,7 +49,7 @@
       </div>
     </div>
 
-<!-- Untuk merefresh -->
+<!-- Untuk alert -->
     <?php if (isset ($_GET['m'])) : ?>
       <?php if ($_GET['m'] == "logout"){ ?>
         <div class="logout-user" data-logout="<?= $_GET['m'] == "logout"; ?>"></div>
