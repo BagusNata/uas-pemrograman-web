@@ -13,7 +13,7 @@
       //Memulai session
       session_start();
       $_SESSION['username'] = $data['username'];
-			header('location: index.php');
+			header('location: admin_selectMhs.php');
 		}else{
 			header('location: login_admin.php?m=fail');
 		}
