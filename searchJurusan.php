@@ -1,6 +1,17 @@
 <?php
   include "proses_class_system.php";
   $cjurusan = new jurusan();
+
+  function search() {
+		?>
+		<form class="search-box-body" action="searchJurusan.php" method="POST">
+			<input class="input-shape" type="text" placeholder="Search..." name="search">
+			<button class="button-search" type="submit" name="submit-search"> 
+				<i class="fa fa-search"></i>
+			</button>
+		</form>
+		<?php
+  }
 ?>
 
 <!doctype html>
@@ -18,14 +29,18 @@
   <body class="bg-blackTheme">
     <!-- NAVBAR -->
     <?php
-      include "navbar.php";
+      include "navbar_mhs.php";
     ?>
     <!-- Content -->
     <div class="container"> 
       <div class="titleBox">
         <h1 class="title">Data</h1>
         <h1 class="title2">Jurusan</h1>
-      </div>  
+      </div>
+      <!-- SearchBox -->
+      <?php
+        search()
+      ?>   
         <!-- Table -->
         <div class="table-responsive-sm shadow">
           <table class="table table-bordered" border="3">

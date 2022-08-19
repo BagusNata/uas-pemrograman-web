@@ -33,11 +33,11 @@
     ?>
 
     <!-- Content --> 
-      <div class="container">   
-        <div class="titleBox">
-          <h1 class="title">Data</h1>
-          <h1 class="title2">Jurusan</h1>
-        </div>   
+    <div class="container">   
+      <div class="titleBox">
+        <h1 class="title">Data</h1>
+        <h1 class="title2">Jurusan</h1>
+    </div>   
     <!-- SearchBox -->
       <?php
         search()

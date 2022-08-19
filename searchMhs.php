@@ -1,6 +1,17 @@
 <?php
   include "proses_class_system.php";
 	$cmahasiswa = new mahasiswa();
+
+  function search() {
+		?>
+		<form class="search-box-body" action="searchMhs.php" method="POST">
+			<input class="input-shape" type="text" placeholder="Search..." name="search">
+			<button class="button-search" type="submit" name="submit-search"> 
+				<i class="fa fa-search"></i>
+			</button>
+		</form>
+		<?php
+  }
 ?>
 
 <!doctype html>
@@ -18,7 +29,7 @@
   <body class="bg-blackTheme">
     <!-- NAVBAR -->
     <?php
-      include "navbar.php";
+      include "navbar_mhs.php";
     ?>
 
     <!-- Content -->
@@ -26,63 +37,67 @@
       <div class="titleBox">
         <h1 class="title">Data</h1>
         <h1 class="title2">Mahasiswa</h1>
-      </div>  
-        <!-- Table -->
-        <div class="table-responsive-sm shadow">
-          <table class="table table-bordered" border="3">
-            <thead class="table-dark table_title">
-              <tr>
-                <th scope="col">NIM</th>
-                <th scope="col">Nama Mahasiwa</th>
-                <th scope="col">Jurusan</th>
-                <th scope="col">Jenis Kelamin</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">No. Hp</th>
-                <th scope="col">Email</th>
-                <th scope="col">Dosen Wali</th>
-                <th scope="col">Foto</th>
-              </tr>
-            </thead>
-         <!-- show Data Table -->
-          <?php
-          foreach($cmahasiswa->search_data() as $tampil) {
-          ?>
-            <tbody class="table-body">
-              <tr>
-                <td class="text-center"> <?php echo $tampil['nim']            ?> </td>
-                <td class="text-center"> <?php echo $tampil['nama_mhs']       ?> </td>
-                <td class="text-center"> <?php echo $tampil['nama_jurusan']   ?> </td>
-                <td class="text-center"> <?php echo $tampil['jenis_kelamin']  ?> </td>
-                <td class="text-center"> <?php echo $tampil['alamat']         ?> </td>
-                <td class="text-center"> <?php echo $tampil['no_hp']          ?> </td>
-                <td class="text-center"> <?php echo $tampil['email']          ?> </td>
-                <td class="text-center"> <?php echo $tampil['nama_dosen']     ?> </td>
-                <td class="text-center"> 
-                  <?php
-                  if($tampil['foto'] == null){
-                  ?>
-                    <img
-                    class="rounded-circle"
-                    src="Assets/Image/DefaultProfilePicture.jpg"
-                    alt="<?php echo $tampil['nama_mhs'] ?> - Profile picture"
-                    style="object-fit: cover; width: 80px; height: 80px;">   
-                  <?php
-                  } else {
-                  ?>
-                    <img
-                    class="rounded-circle"
-                    src="Assets/UploadFoto/<?php echo $tampil['foto'] ?>"
-                    alt="<?php echo $tampil['nama_mhs'] ?> - Profile picture"
-                    style="object-fit: cover; width: 80px; height: 80px;"> 
-                  <?php
-                  }
-                  ?>  
-                </td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
-        </div>
+    </div>
+    <!-- SearchBox -->
+    <?php
+      search()
+    ?>  
+      <!-- Table -->
+      <div class="table-responsive-sm shadow">
+        <table class="table table-bordered" border="3">
+          <thead class="table-dark table_title">
+            <tr>
+              <th scope="col">NIM</th>
+              <th scope="col">Nama Mahasiwa</th>
+              <th scope="col">Jurusan</th>
+              <th scope="col">Jenis Kelamin</th>
+              <th scope="col">Alamat</th>
+              <th scope="col">No. Hp</th>
+              <th scope="col">Email</th>
+              <th scope="col">Dosen Wali</th>
+              <th scope="col">Foto</th>
+            </tr>
+          </thead>
+        <!-- show Data Table -->
+        <?php
+        foreach($cmahasiswa->search_data() as $tampil) {
+        ?>
+          <tbody class="table-body">
+            <tr>
+              <td class="text-center"> <?php echo $tampil['nim']            ?> </td>
+              <td class="text-center"> <?php echo $tampil['nama_mhs']       ?> </td>
+              <td class="text-center"> <?php echo $tampil['nama_jurusan']   ?> </td>
+              <td class="text-center"> <?php echo $tampil['jenis_kelamin']  ?> </td>
+              <td class="text-center"> <?php echo $tampil['alamat']         ?> </td>
+              <td class="text-center"> <?php echo $tampil['no_hp']          ?> </td>
+              <td class="text-center"> <?php echo $tampil['email']          ?> </td>
+              <td class="text-center"> <?php echo $tampil['nama_dosen']     ?> </td>
+              <td class="text-center"> 
+                <?php
+                if($tampil['foto'] == null){
+                ?>
+                  <img
+                  class="rounded-circle"
+                  src="Assets/Image/DefaultProfilePicture.jpg"
+                  alt="<?php echo $tampil['nama_mhs'] ?> - Profile picture"
+                  style="object-fit: cover; width: 80px; height: 80px;">   
+                <?php
+                } else {
+                ?>
+                  <img
+                  class="rounded-circle"
+                  src="Assets/UploadFoto/<?php echo $tampil['foto'] ?>"
+                  alt="<?php echo $tampil['nama_mhs'] ?> - Profile picture"
+                  style="object-fit: cover; width: 80px; height: 80px;"> 
+                <?php
+                }
+                ?>  
+              </td>
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- Untuk merefresh -->
