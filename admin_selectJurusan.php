@@ -75,7 +75,7 @@
 
     <!-- Untuk alert -->
     <?php if (isset ($_GET['m'])) : ?>
-      <div class="update-data" data-update_data="<?= $_GET['m']; ?>"></div>
+      <div class="update-record" data-update="<?= $_GET['m']; ?>"></div>
     <?php endif; ?>
 
     <!-- Optional JavaScript -->
@@ -119,13 +119,13 @@
           })
       })
       
-      const update = $('.update-data').data('update_data')
+      const update = $('.update-record').data('update')
       if (update) {
           Swal.fire({
             timer: 3500,
             timerProgressBar: true,
             icon  : 'success',
-            title : 'Success',
+            title : 'Update Record',
             text  : 'Record has been updated!',
           })
       }
