@@ -132,9 +132,9 @@
     </div>
 
     <!-- Untuk alert -->
-     <?php if ($_GET['m'] == "new") {?>
-        <div class="new-data" data-new="<?= $_GET['m'] == "new"; ?>"></div>
-    <?php } ?>
+    <?php if (isset ($_GET['m'])) : ?>
+      <div class="new-data" data-new="<?= $_GET['m']; ?>"></div>
+    <?php endif; ?>
 
     <!-- Optional JavaScript --> 
     <!-- SweetAlert2 --> 

@@ -65,6 +65,28 @@
       </div>
     </div>
   
+    <!-- Untuk alert -->
+    <?php if (isset ($_GET['m'])) : ?>
+      <div class="new-data" data-new="<?= $_GET['m']; ?>"></div>
+    <?php endif; ?>
+
+    <!-- Optional JavaScript --> 
+    <!-- SweetAlert2 --> 
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script>
+      const newData = $('.new-data').data('new')
+      if (newData) {
+          Swal.fire({
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'success',
+            title : 'Insert Success',
+            text  : 'New data has been added to record!',
+          })
+      }
+    </script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
