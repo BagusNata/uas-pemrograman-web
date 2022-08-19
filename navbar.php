@@ -36,6 +36,10 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="selectAdminJadwal.php">Jadwal Kuliah</a>
         </li>
+        <!-- User -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="login.php">Login as User</a>
+        </li>
         <!-- Logout -->
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
