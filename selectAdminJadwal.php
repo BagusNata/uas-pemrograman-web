@@ -60,7 +60,7 @@
                 <!-- ACTION -->
                 <!-- ubah jadwal -->
                 <td class="text-center"> 
-                  <a style="color:black;" href="edit_admin_jadwal.php?kode_jadwal=<?php echo $data['kode_jadwal']?>" class="btn-edit"> <img src="Assets/Image/b_update.png" width="30px"> ubah </a>
+                  <a style="color:black;" href="edit_admin_jadwal.php?kode_jadwal=<?php echo $data['kode_jadwal']?>" class="btn-edit"> <img src="Assets/Image/b_update.png" width="30px"> Edit </a>
                 </td>
                 <!-- delete jadwal -->
                 <td class="text-center"> 

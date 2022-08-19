@@ -97,10 +97,10 @@
                   ?>  
                 </td>
                 <td class="text-center"> 
-                  <a style="color:black;" href="editMhs.php?nim=<?php echo $tampil['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
+                  <a style="color:black;" href="editMhs.php?nim=<?php echo $tampil['nim']?>" class="btn-edit"> <img src="Assets/Image/b_update.png" width="30px"> Edit </a>
                 </td>
                 <td class="text-center"> 
-                  <a style="color:black;" href="proses_mahasiswa.php?q=delete&nim=<?php echo $tampil['nim'] ?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
+                  <a style="color:black;" href="proses_mahasiswa.php?q=delete&nim=<?php echo $tampil['nim'] ?>" class="btn-del"> <img src="Assets/Image/b_delete.png" width="30px"> Delete </a>
                 </td>
               </tr>
               <?php } ?>
